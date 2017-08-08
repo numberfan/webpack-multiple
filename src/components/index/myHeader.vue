@@ -1,8 +1,12 @@
 <template>
     <div class="header">
         <ul>
-          <li class="item" v-for="item in navList">
-            <a href="">{{ item }}</a>
+          <li class="item" 
+              v-for="(item, index) in navList" 
+              v-bind:item=index
+              v-on:click="itemEvent(index, $event)"
+          >
+            <a href="javascript:;" class="item-a">{{ item }}</a>
           </li>
         </ul>
     </div>
@@ -14,6 +18,12 @@ export default {
     return {
       username: '张三',
       navList: ['首页', '新闻', '最热', '我的']
+    }
+  },
+  methods: {
+    itemEvent (item, event) {
+      console.log(event)
+      console.log(item)
     }
   }
 }
@@ -33,6 +43,11 @@ export default {
       .active {
         color: #f00;
       }
+    }
+    .item-a {
+      display: block;
+      .size(100%, 100%);
+      font-size: 32px;
     }
   }
 </style>
