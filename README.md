@@ -1,14 +1,3 @@
-# 使用说明
-
-利用 `vue-cli` 自动生成模板，目前加入了 `lib-flexible` 这个移动端适配方案。后期可以根据项目需要进一步配置，模板为单页面页面打包应用。我的本地环境是
-```shell
-	node -v
-	v 7.10.0
-	npm -v
-	3.10.10
-```
-> 建议使用 [nvm](https://github.com/creationix/nvm) 来灵活配置 `node` 版本
-
 ## 目录结构
 
 ![Casecad](./docs/img/1.png)
@@ -33,43 +22,16 @@
 * `/yarn.lock` [yarn](https://yarnpkg.com/zh-Hans/) 辅助依赖管理
 
 
+## 使用详情
+http://git.dayuw.org/1renhao/dayu-vue-spa-boilerplate/tree/master
 
-## 使用
+## 内部UI（src/components/common）
+UI参考：https://github.com/ElemeFE/mint-ui/blob/master/packages/message-box/src/message-box.vue
+1. Tab.vue tab选项卡 (希望给con加上过度transition)
+2. Scroller.vue 下拉加载 https://github.com/eightfeet/vue-scrolllist
 
-### 下载依赖
+## 插件引用
+1. vue-scroller 下拉加载，上拉刷新 https://github.com/wangdahoo/vue-scroller
 
-``` shell
-npm i 或者 yarn
-```
-
-### 运行
-
-```shell
-npm run dev
-```
-
-### 编译打包
-
-```shell
-npm run build
-```
-
-### 单元测试
-
-```shell
-npm run unit
-```
-
-### e2e 测试
-
-```shell
-npm run e2e
-```
-
-### 代码语法检测
-
-```shell
-npm run lint
-```
-
-> 此命令一般不会运行，配合编辑器插件可以实时查看
+## 问题集锦
+1.
