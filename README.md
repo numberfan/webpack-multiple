@@ -29,9 +29,26 @@ http://git.dayuw.org/1renhao/dayu-vue-spa-boilerplate/tree/master
 UI参考：https://github.com/ElemeFE/mint-ui/blob/master/packages/message-box/src/message-box.vue
 1. Tab.vue tab选项卡 (希望给con加上过度transition)
 2. Scroller.vue 下拉加载 https://github.com/eightfeet/vue-scrolllist
+3. Dialog.vue 弹窗 https://github.com/fangyongbao/cubeex/blob/master/src/components/dialog/index.vue
+4. Calendar.vue 日历 https://github.com/fangyongbao/cubeex/blob/master/src/components/datetime/index.vue
+5. Toast/ 信息提示弹窗 https://github.com/webjyh/vue-tooltips/blob/master/README.md
 
 ## 插件引用
 1. vue-scroller 下拉加载，上拉刷新 https://github.com/wangdahoo/vue-scroller
 
 ## 问题集锦
-1.
+1. ~~缺信息提示组件~~ components/common/Toast/
+2. ~~时间选择工具~~ components/common/Calendar.vue
+3. ~~接口代理测试~~
+    设置：about.js
+    proxyTable: {
+      '/api': {
+        target: 'http://jkt.dayuw.cn',
+        changeOrigin: true
+      }
+    }
+4. ~~绑定线上CDN设置~~  更改config/index.js 下的assetsPublicPath值为线上CDN即可
+5. ~~使用flexible 不编译字体~~ 字体后面加/*px*/
+6. ~~对应的图片该怎么处理~~ 全部尺寸使用rem即可
+7. ~~服务器在本地怎么处理~~ 和问题3处理方法一致
+8. ~~可以在微信开发工具中使用么~~ 输入页面地址即可

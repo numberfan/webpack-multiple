@@ -5,10 +5,14 @@ module.exports = {
   rootHtmlPage: 'views',
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../dist/about.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/mobile/',
+
+    // 更改为../ 在生产环境可改为相对路径
+    // 也可以更改为线上CDN http://baoliao.cq.qq.com/
+    assetsPublicPath: '/',
+
     productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -27,10 +31,10 @@ module.exports = {
     port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/mobile/',
+    assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://jkt.dayuw.cn',
+        target: 'http://baoliao.cq.qq.com/',
         changeOrigin: true
       }
     },

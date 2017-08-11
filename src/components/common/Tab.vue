@@ -63,8 +63,8 @@ export default {
       .size(50%, 100%);
       float: left;
       text-align: center;
-      font-size: 32px;
-      .transition(border 0.25s ease-in-out);
+      font-size: 32px; /*px*/
+      .transition(border 0.2s ease-in-out);
       &.active {
         border-bottom-color: #333;
       }

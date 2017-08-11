@@ -1,8 +1,8 @@
 <template>
     <div class="header">
         <ul>
-          <li class="item" 
-              v-for="(item, index) in navList" 
+          <li class="item"
+              v-for="(item, index) in navList"
               v-bind:item=index
               v-on:click="itemEvent(index, $event)"
           >
@@ -47,7 +47,7 @@ export default {
     .item-a {
       display: block;
       .size(100%, 100%);
-      font-size: 32px;
+      font-size: 32px; /* no */
     }
   }
 </style>

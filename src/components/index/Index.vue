@@ -1,75 +1,90 @@
 <template>
 	<div class="index-wrap">
-    <tab v-bind:tabNames="tabName" style="display: none">
-      <listTest slot="tab-con01" v-bind:dataArr="tabArr01"></listTest>
-      <listTest slot="tab-con02" v-bind:dataArr="tabArr02"></listTest>
+    <tab v-bind:tabNames="tab.tabName">
+      <listTest slot="tab-con01" v-bind:dataArr="tab.tabArr01"></listTest>
+      <listTest slot="tab-con02" v-bind:dataArr="tab.tabArr02"></listTest>
     </tab>
-    <messageBox
-                :type="alertType"
-                :title="alertTit"
-                :content="alertCon"
-    ></messageBox>
+    <message :dialog-config="dialogConfig1" @left-btn="cancel1" @right-btn="sure1" @close-dia="closeDia"></message>
 	</div>
 </template>
 
 <script>
   import tab from './../common/Tab'
   import listTest from './../common/ListTest'
-
-  import messageBox from './../common/MessageBox'
+  import message from '../common/Dialog'
 
   export default {
     data () {
       return {
-        tabName: ['进行中', '已结束'],
-        alertType: 'prompt',
-        alertTit: '我是标题',
-        alertCon: '我是内容',
-        /* tab测试数据 */
-        tabArr01: [
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000},
-          {name: '张三', age: 1000}
-        ],
-        tabArr02: [
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10},
-          {name: '李四', age: 10}
-        ]
+        tab: {
+          tabName: ['进行中', '已结束'],
+          /* tab测试数据 */
+          tabArr01: [
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000},
+            {name: '张三', age: 1000}
+          ],
+          tabArr02: [
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10},
+            {name: '李四', age: 10}
+          ]
+        },
+        dialogConfig1: {
+          hasClose: true,
+          title: '提示',
+          content: '内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容',
+          button: ['取消', '确定'],
+          isDiaShow: false
+        }
       }
     },
     mounted: function () {
+      console.log(233)
     },
     methods: {
+      openDia1 () {
+        this.dialogConfig1.isDiaShow = true
+      },
+      cancel1 () {
+        this.dialogConfig1.isDiaShow = false
+      },
+      sure1 () {
+        console.log('确定1')
+        this.dialogConfig1.isDiaShow = false
+      },
+      closeDia () {
+        this.dialogConfig1.isDiaShow = false
+      }
     },
     ready () {
     },
     components: {
       tab,
       listTest,
-      messageBox
+      message
     }
   }
 </script>
